@@ -29,7 +29,6 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/todolist-fe
-            docker stop todolist-fe || true
-            docker rm todolist-fe || true
-            docker run -d -p 3000:80 --name todolist-fe ${{ secrets.DOCKER_USERNAME }}/todolist-fe
+            docker ps -q --filter "name=todolist-fe" | grep -q . && docker stop todolist-fe && docker rm todolist-fe || true
+            docker pull rifkirizkia/todolist-fe:latest
+            docker run -d --name todolist-fe -p 3000:80 rifkirizkia/todolist-fe:latest

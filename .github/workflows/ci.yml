@@ -33,3 +33,4 @@ jobs:
             docker stop todolist-fe || true
             docker rm todolist-fe || true
             docker run -d -p 3000:80 --name todolist-fe ${{ secrets.DOCKER_USERNAME }}/todolist-fe
+            

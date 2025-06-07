@@ -29,8 +29,8 @@ function LoginScreen() {
     <div style={styles.container}>
       <div style={styles.card}>
         <h2 style={styles.title}>Login</h2>
-        <h3 style={styles.title}>Selamat Datang Di Web Todolist</h3>
-        <h4 style={styles.title}>Catat semua aktifitasmu dengan mudah</h4>
+        <h3 style={styles.text}>Selamat Datang Di Web Todolist</h3>
+        <h4 style={styles.text}>Catat semua aktifitasmu dengan mudah</h4>
         <form onSubmit={handleLogin} style={styles.form}>
           <input
             type="email"
@@ -83,6 +83,11 @@ const styles = {
   title: {
     marginBottom: '25px',
     fontSize: '24px',
+    color: '#333',
+  },
+  text: {
+    marginBottom: '16px',
+    fontSize: '12px',
     color: '#333',
   },
   form: {

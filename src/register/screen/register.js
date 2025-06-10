@@ -15,7 +15,7 @@ function Register() {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
+  const API_URL = process.env.REACT_APP_API_URL;
   const handleRegister = async (e) => {
     e.preventDefault();
 
@@ -25,7 +25,7 @@ function Register() {
     }
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/auth/register', {
+      const response = await axios.post(`${API_URL}auth/register`, {
         name: form.name,
         email: form.email,
         password: form.password,
